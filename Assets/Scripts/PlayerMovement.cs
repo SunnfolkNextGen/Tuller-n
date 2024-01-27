@@ -72,10 +72,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door1")
         {
+            Debug.Log("Du er på dør 1");
             if (_input.Interact > 0.1f)
             {
-                Debug.Log("du åpnet dør 1");
-                infinteCorridor.currentChoice++;
+                //Debug.Log("du åpnet dør 1");
                 DoorIndex = 1;
             }
             else infinteCorridor.spawnFix = true;
@@ -83,10 +83,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door2")
         {
+            Debug.Log("Du er på dør 2");
             if (_input.Interact > 0.1f)
             {
-                Debug.Log("du åpnet dør 2");
-                infinteCorridor.currentChoice++;
+                //Debug.Log("du åpnet dør 2");
                 DoorIndex = 2;
             }
             else infinteCorridor.spawnFix = true;
@@ -94,10 +94,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door3")
         {
+            Debug.Log("Du er på dør 3");
             if (_input.Interact > 0.1f)
             {
-                Debug.Log("du åpnet dør 3");
-                infinteCorridor.currentChoice++;
+                //Debug.Log("du åpnet dør 3");
                 DoorIndex = 3;
             }
             else infinteCorridor.spawnFix = true;
@@ -105,10 +105,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door4")
         {
+            Debug.Log("Du er på dør 4");
             if (_input.Interact > 0.1f)
             {
-                Debug.Log("du åpnet dør 4");
-                infinteCorridor.currentChoice++;
+                //Debug.Log("du åpnet dør 4");
                 DoorIndex = 4;
             }
             else infinteCorridor.spawnFix = true;
