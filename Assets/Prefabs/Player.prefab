@@ -135,10 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d843ab1867269941b300b5687a363ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -13
   moveSpeed: 6
+  sprintSpeed: 12
   _moveSmoothTime: 0.3
   currentDirection: {x: 0, y: 0}
+  DoorIndex: 0
+  isInteracting: 0
 --- !u!143 &4375123020587441597
 CharacterController:
   m_ObjectHideFlags: 0

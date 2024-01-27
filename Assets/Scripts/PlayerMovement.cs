@@ -20,11 +20,16 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 currentDirection = Vector2.zero;
     private Vector2 _currentDirectionVel = Vector2.zero;
     
+    public int DoorIndex;
+    [SerializeField] private InfiniteCorridorController infinteCorridor;
+
+
     public bool isInteracting;
     void Awake()
     {
         _input = GetComponent<InputActionsController>();
         _characterController = GetComponent<CharacterController>();
+        infinteCorridor = FindObjectOfType<InfiniteCorridorController>();
     }
 
     // Update is called once per frame
@@ -59,6 +64,54 @@ public class PlayerMovement : MonoBehaviour
         {
             isInteracting = false;
         }
-        
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.tag == "Door1")
+        {
+            if (_input.Interact > 0.1f)
+            {
+                Debug.Log("du åpnet dør 1");
+                infinteCorridor.currentChoice++;
+                DoorIndex = 1;
+            }
+            else infinteCorridor.spawnFix = true;
+        }
+
+        if (other.gameObject.tag == "Door2")
+        {
+            if (_input.Interact > 0.1f)
+            {
+                Debug.Log("du åpnet dør 2");
+                infinteCorridor.currentChoice++;
+                DoorIndex = 2;
+            }
+            else infinteCorridor.spawnFix = true;
+        }
+
+        if (other.gameObject.tag == "Door3")
+        {
+            if (_input.Interact > 0.1f)
+            {
+                Debug.Log("du åpnet dør 3");
+                infinteCorridor.currentChoice++;
+                DoorIndex = 3;
+            }
+            else infinteCorridor.spawnFix = true;
+        }
+
+        if (other.gameObject.tag == "Door4")
+        {
+            if (_input.Interact > 0.1f)
+            {
+                Debug.Log("du åpnet dør 4");
+                infinteCorridor.currentChoice++;
+                DoorIndex = 4;
+            }
+            else infinteCorridor.spawnFix = true;
+        }
     }
 }
