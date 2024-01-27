@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,8 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _characterController;
     private InputActionsController _input;
     
+    
     private float _vel;
-    private Vector2 _currentDirection = Vector2.zero;
+    public Vector2 currentDirection = Vector2.zero;
     private Vector2 _currentDirectionVel = Vector2.zero;
     void Awake()
     {
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _currentDirection = Vector2.SmoothDamp(_currentDirection, _input.MoveVector, 
+        currentDirection = Vector2.SmoothDamp(currentDirection, _input.MoveVector, 
             ref _currentDirectionVel, _moveSmoothTime);
         
         if (_characterController.isGrounded)
@@ -39,9 +41,19 @@ public class PlayerMovement : MonoBehaviour
         _vel = Mathf.Clamp(_vel, -26f, 26f);
  
         //Saves inputted movement & gravity
-        var vel = (transform.forward * _currentDirection.y + transform.right * _currentDirection.x) * moveSpeed + Vector3.up * _vel;
+        var vel = (transform.forward * currentDirection.y + transform.right * currentDirection.x) * moveSpeed + Vector3.up * _vel;
 
         //Moves the character based on vel
         _characterController.Move(vel * Time.deltaTime);
+        
+        if (_input.Sprint > 0.1f)
+        {
+            moveSpeed = 12f;
+            Debug.Log("Sprinting");
+        }
+        else
+        {
+            moveSpeed = 6f;
+        }
     }
 }
