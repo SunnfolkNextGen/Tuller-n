@@ -5,18 +5,22 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float gravity = -13f;
+    
     [SerializeField] private float moveSpeed = 6f;
+    [SerializeField] private float sprintSpeed = 12f;
     [SerializeField] [Range(0f, 1f)] private float _moveSmoothTime = 0.3f;
     // Start is called before the first frame update
+    
     
     private CharacterController _characterController;
     private InputActionsController _input;
     
     
-    private float _vel;
+    private float _vel  = -2f;
     public Vector2 currentDirection = Vector2.zero;
     private Vector2 _currentDirectionVel = Vector2.zero;
+    
+    public bool isInteracting;
     void Awake()
     {
         _input = GetComponent<InputActionsController>();
@@ -29,15 +33,6 @@ public class PlayerMovement : MonoBehaviour
         currentDirection = Vector2.SmoothDamp(currentDirection, _input.MoveVector, 
             ref _currentDirectionVel, _moveSmoothTime);
         
-        if (_characterController.isGrounded)
-        {
-            _vel = -2f;
-        }
-        else
-        {
-            _vel += gravity * Time.deltaTime;
-        }
-        
         _vel = Mathf.Clamp(_vel, -26f, 26f);
  
         //Saves inputted movement & gravity
@@ -48,12 +43,22 @@ public class PlayerMovement : MonoBehaviour
         
         if (_input.Sprint > 0.1f)
         {
-            moveSpeed = 12f;
+            moveSpeed = sprintSpeed;
             Debug.Log("Sprinting");
         }
         else
         {
             moveSpeed = 6f;
         }
+
+        if (_input.Interact > 0.1f)
+        {
+            isInteracting = true;
+        }
+        else
+        {
+            isInteracting = false;
+        }
+        
     }
 }
