@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timeRemaining -= Time.deltaTime;
-        Debug.Log(timeRemaining);
+        
         
         if (timeRemaining <0)
         {
@@ -26,6 +26,6 @@ public class Timer : MonoBehaviour
     
     void TimeHasRunOut()
     {
-        Debug.Log("Time has run out!");
+        //Debug.Log("Time has run out!");
     }
 }
