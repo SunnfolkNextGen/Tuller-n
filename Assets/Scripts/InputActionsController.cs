@@ -19,6 +19,7 @@ public class InputActionsController : MonoBehaviour
     public Vector2 LookVector { get; private set; }
     
     public float Sprint { get; private set; }
+    public float Interact { get; private set; }
     
     // Start is called before the first frame update
     private void Awake()
@@ -43,6 +44,7 @@ public class InputActionsController : MonoBehaviour
         MoveVector = _playerInput.Input.Movement.ReadValue<Vector2>();
         LookVector = _playerInput.Input.Look.ReadValue<Vector2>();
         Sprint = _playerInput.Input.Sprint.ReadValue<float>();
+        Interact = _playerInput.Input.Interact.ReadValue<float>();
         
     }
 }
