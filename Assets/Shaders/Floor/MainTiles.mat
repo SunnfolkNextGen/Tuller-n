@@ -61,6 +61,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Wetness: 1
     m_Colors:
     - _CaulkColor: {r: 0.5960785, g: 0.5372549, b: 0.47450978, a: 0}
     - _StainColor: {r: 0.4528302, g: 0.379717, b: 0, a: 0}
