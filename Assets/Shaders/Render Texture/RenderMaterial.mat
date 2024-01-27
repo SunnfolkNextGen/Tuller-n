@@ -28,6 +28,10 @@ Material:
         m_Texture: {fileID: 8400000, guid: f0937229d4a073d4bb7c810d6eeb90ee, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_5382e28f3ad24b359707b67ba53da5e3_Out_0_Texture2D:
+        m_Texture: {fileID: 8400000, guid: f0937229d4a073d4bb7c810d6eeb90ee, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -42,7 +46,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Posterization_Level: 165.2
+    - _Line_Intensity: -3.67
+    - _Line_Size: 0.002
+    - _Posterization_Level: 25.3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
