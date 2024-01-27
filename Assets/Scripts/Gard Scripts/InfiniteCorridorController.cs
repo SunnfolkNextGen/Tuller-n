@@ -7,14 +7,16 @@ public class InfiniteCorridorController : MonoBehaviour
 
     [HideInInspector] public PlayerMovement player;
 
-    private int[] choices = new int[4]; 
-    [HideInInspector] public int currentChoice;
+    private int[] choices = new int[4];         // de riktige
+    [HideInInspector] public int currentChoice; // det valget du er på
+                                //DoorIndax     // Hvilken dør du er på
+    //[SerializeField] private GameObject Corridor0;
+    //[SerializeField] private GameObject Corridor1;
+    //[SerializeField] private GameObject Corridor2;
+    //[SerializeField] private GameObject Corridor3;
+    //[SerializeField] private GameObject Corridor4;
 
-    [SerializeField] private GameObject Corridor0;
-    [SerializeField] private GameObject Corridor1;
-    [SerializeField] private GameObject Corridor2;
-    [SerializeField] private GameObject Corridor3;
-    [SerializeField] private GameObject Corridor4;
+    [SerializeField] private GameObject[] Corridors = new GameObject[5];
 
     [SerializeField] private GameObject SpawnPoint12;
     [SerializeField] private GameObject SpawnPoint34;
@@ -39,9 +41,75 @@ public class InfiniteCorridorController : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>(); 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        print("currentChoice = " + currentChoice);
+
+        switch (player.DoorIndex)
+        {
+            case 1:
+                if (choices[currentChoice] == player.DoorIndex && spawnFix)
+                {
+                    Instantiate(Corridors[currentChoice], SpawnPoint12.transform.position, Quaternion.identity);
+                    player.DoorIndex = 0;
+                    currentChoice++;
+                    spawnFix = false;
+                }
+                else
+                {
+                    Instantiate(Corridors[0], SpawnPoint12.transform.position, Quaternion.identity);
+                    currentChoice = 0;
+                }
+                break;
+            case 2:
+                if (choices[currentChoice] == player.DoorIndex && spawnFix)
+                {
+                    Instantiate(Corridors[currentChoice], SpawnPoint12.transform.position, Quaternion.identity);
+                    player.DoorIndex = 0;
+                    currentChoice++;
+                    spawnFix = false;
+                }
+                else
+                {
+                    Instantiate(Corridors[0], SpawnPoint12.transform.position, Quaternion.identity);
+                    currentChoice = 0;
+                }
+                break;
+            case 3:
+                if (choices[currentChoice] == player.DoorIndex && spawnFix)
+                {
+                    Instantiate(Corridors[currentChoice], SpawnPoint34.transform.position, Quaternion.identity);
+                    player.DoorIndex = 0;
+                    currentChoice++;
+                    spawnFix = false;
+                }
+                else
+                {
+                    Instantiate(Corridors[0], SpawnPoint34.transform.position, Quaternion.identity);
+                    currentChoice = 0;
+                }
+                break;
+            case 4:
+                if (choices[currentChoice] == player.DoorIndex && spawnFix)
+                {
+                    Instantiate(Corridors[currentChoice], SpawnPoint34.transform.position, Quaternion.identity);
+                    player.DoorIndex = 0;
+                    currentChoice++;
+                    spawnFix = false;
+                }
+                else
+                {
+                    Instantiate(Corridors[0], SpawnPoint34.transform.position, Quaternion.identity);
+                    currentChoice = 0;
+                }
+                break;
+        }
+
+
+
+
+
+        /*
         switch(currentChoice){
             case 1:
                 if (choices[0] == player.DoorIndex && spawnFix)
@@ -57,7 +125,7 @@ public class InfiniteCorridorController : MonoBehaviour
                 } 
                 break;
             case 2: 
-                if(choices[0] == player.DoorIndex && spawnFix)
+                if(choices[1] == player.DoorIndex && spawnFix)
                 {
                     Instantiate(Corridor2, SpawnPoint12.transform.position, Quaternion.identity);
                     player.DoorIndex = 0;
@@ -70,7 +138,7 @@ public class InfiniteCorridorController : MonoBehaviour
                 } 
                 break;
             case 3:
-                if (choices[0] == player.DoorIndex && spawnFix)
+                if (choices[2] == player.DoorIndex && spawnFix)
                 {
                     Instantiate(Corridor3, SpawnPoint34.transform.position, Quaternion.identity);
                     player.DoorIndex = 0;
@@ -83,7 +151,7 @@ public class InfiniteCorridorController : MonoBehaviour
                 }    
                 break;
             case 4:   
-                if(choices[0] == player.DoorIndex && spawnFix)
+                if(choices[3] == player.DoorIndex && spawnFix)
                 {
                     Instantiate(Corridor4, SpawnPoint34.transform.position, Quaternion.identity);
                     player.DoorIndex = 0;
@@ -98,7 +166,7 @@ public class InfiniteCorridorController : MonoBehaviour
                 break;
         }
 
-
+        */
 
     }
 

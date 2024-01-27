@@ -509,16 +509,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   currentChoice: 0
-  Corridor0: {fileID: 7554983767729065611, guid: 586775f71b6120644b0789a2577ab4fd,
-    type: 3}
-  Corridor1: {fileID: 7554983767729065611, guid: 14bb8ee887ed87040ba614430cb83b71,
-    type: 3}
-  Corridor2: {fileID: 7554983767729065611, guid: f5e602ad42d4da343a23914fd4bfadad,
-    type: 3}
-  Corridor3: {fileID: 7554983767729065611, guid: 089d8413f5069194d9dec35a8f265660,
-    type: 3}
-  Corridor4: {fileID: 7554983767729065611, guid: 53082f30cc9fe8647a247caee2640a9a,
-    type: 3}
+  Corridors:
+  - {fileID: 7554983767729065611, guid: 586775f71b6120644b0789a2577ab4fd, type: 3}
+  - {fileID: 7554983767729065611, guid: 14bb8ee887ed87040ba614430cb83b71, type: 3}
+  - {fileID: 7554983767729065611, guid: f5e602ad42d4da343a23914fd4bfadad, type: 3}
+  - {fileID: 7554983767729065611, guid: 089d8413f5069194d9dec35a8f265660, type: 3}
+  - {fileID: 7554983767729065611, guid: 53082f30cc9fe8647a247caee2640a9a, type: 3}
   SpawnPoint12: {fileID: 1481633701081641801}
   SpawnPoint34: {fileID: 7297836426964704530}
   spawnFix: 0
