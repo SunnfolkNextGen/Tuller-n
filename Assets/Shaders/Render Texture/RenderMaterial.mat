@@ -48,7 +48,7 @@ Material:
     m_Floats:
     - _Line_Intensity: -3.5
     - _Line_Size: 0.002
-    - _Posterization_Level: 35
+    - _Posterization_Level: 50
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
