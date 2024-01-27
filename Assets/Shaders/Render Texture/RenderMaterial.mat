@@ -46,9 +46,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Line_Intensity: -3.67
+    - _Line_Intensity: -3.5
     - _Line_Size: 0.002
-    - _Posterization_Level: 25.3
+    - _Posterization_Level: 35
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
