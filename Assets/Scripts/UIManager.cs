@@ -26,27 +26,17 @@ public class UIManager : MonoBehaviour
         if (input.SeeTimer)
         {
             animator.SetBool(IsHoldingUpArm, true);
-            StartCoroutine(wait());
+            
            
         }
         else
         {
             animator.SetBool(IsHoldingUpArm, false);
-            textTimer.alpha = 0;
+            
         }
         
         
     }
     
-    private IEnumerator wait()
-    {
-        yield return new WaitForSeconds(1);
-        textTimer.alpha = 1;
-        if (!input.SeeTimer)
-            textTimer.alpha = 0;
-        else
-            textTimer.alpha = 1;
-            
-
-    }
+    
 }
