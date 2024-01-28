@@ -18,8 +18,11 @@ public class InfiniteCorridorController : MonoBehaviour
 
     [SerializeField] private GameObject[] Corridors = new GameObject[5];
 
+    [SerializeField] private GameObject[] Doors = new GameObject[4];
+
     [SerializeField] private GameObject SpawnPoint12;
     [SerializeField] private GameObject SpawnPoint34;
+
 
 
 
@@ -55,10 +58,11 @@ public class InfiniteCorridorController : MonoBehaviour
                     currentChoice++;
                     spawnFix = false;
                 }
-                else
+                else if (!spawnFix)
                 {
                     Instantiate(Corridors[0], SpawnPoint12.transform.position, Quaternion.identity);
                     currentChoice = 0;
+                    spawnFix = false;
                 }
                 break;
             case 2:
@@ -69,10 +73,11 @@ public class InfiniteCorridorController : MonoBehaviour
                     currentChoice++;
                     spawnFix = false;
                 }
-                else
+                else if (!spawnFix)
                 {
                     Instantiate(Corridors[0], SpawnPoint12.transform.position, Quaternion.identity);
                     currentChoice = 0;
+                    spawnFix = false;
                 }
                 break;
             case 3:
@@ -83,10 +88,11 @@ public class InfiniteCorridorController : MonoBehaviour
                     currentChoice++;
                     spawnFix = false;
                 }
-                else
+                else if(!spawnFix)
                 {
                     Instantiate(Corridors[0], SpawnPoint34.transform.position, Quaternion.identity);
                     currentChoice = 0;
+                    spawnFix = false;
                 }
                 break;
             case 4:
@@ -97,10 +103,11 @@ public class InfiniteCorridorController : MonoBehaviour
                     currentChoice++;
                     spawnFix = false;
                 }
-                else
+                else if (!spawnFix)
                 {
                     Instantiate(Corridors[0], SpawnPoint34.transform.position, Quaternion.identity);
                     currentChoice = 0;
+                    spawnFix = false;
                 }
                 break;
         }
