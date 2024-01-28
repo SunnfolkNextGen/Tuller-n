@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    
+    public TMP_Text textTimer;
     [SerializeField]private InputActionsController input;
     [SerializeField]private Animator animator;
     private static readonly int IsHoldingUpArm = Animator.StringToHash("IsHoldingUpArm");
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         animator.Play("idle");
+        textTimer.alpha = 0;
     }
 
     // Update is called once per frame
@@ -24,12 +26,13 @@ public class UIManager : MonoBehaviour
         if (input.SeeTimer)
         {
             animator.SetBool(IsHoldingUpArm, true);
-            wait();
+            StartCoroutine(wait());
            
         }
         else
         {
             animator.SetBool(IsHoldingUpArm, false);
+            textTimer.alpha = 0;
         }
         
         
@@ -38,5 +41,12 @@ public class UIManager : MonoBehaviour
     private IEnumerator wait()
     {
         yield return new WaitForSeconds(1);
+        textTimer.alpha = 1;
+        if (!input.SeeTimer)
+            textTimer.alpha = 0;
+        else
+            textTimer.alpha = 1;
+            
+
     }
 }
