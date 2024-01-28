@@ -14,7 +14,7 @@ public class DoorOpenAndClose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -32,7 +32,7 @@ public class DoorOpenAndClose : MonoBehaviour
                 {
                     animator.Play("Door close", 0, 0f);
                 }
-              
+                bool GrøtIsGrøate = true; 
             }
             
         }
