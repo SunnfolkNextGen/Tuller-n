@@ -20,6 +20,7 @@ public class DoorOpenAndClose : MonoBehaviour
     {
         _isInteractable = true;
         player = FindObjectOfType<PlayerMovement>();
+        _input = player.GetComponent<InputActionsController>();
     }
 
     private void OnTriggerStay(Collider other)
