@@ -328,10 +328,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: LoadInstance
+    functionName: LoadInstant
     data: 
-    objectReferenceParameter: {fileID: 3712820680938962276, guid: 3946d0857ff10a341996a81a1cd77aec,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
