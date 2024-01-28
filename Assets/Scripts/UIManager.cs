@@ -8,7 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]private Timer timer;
     [SerializeField]private InputActionsController input;
     [SerializeField]private Animator animator;
-    
+    private static readonly int IsHoldingUpArm = Animator.StringToHash("IsHoldingUpArm");
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -19,17 +20,14 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (input.SeeTimer>0)
-        {
-           
-            animator.Play("ArmAnimation");
-        }
 
-        if (input.SeeTimer<=0)
-        
+        if (input.SeeTimer)
         {
-            animator.Play("PutAwayArm");
+            animator.SetBool(IsHoldingUpArm, true);
+        }
+        else
+        {
+            animator.SetBool(IsHoldingUpArm, false);
         }
         
         Debug.Log(timer.timeRemaining);
