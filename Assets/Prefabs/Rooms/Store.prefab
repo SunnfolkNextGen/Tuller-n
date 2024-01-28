@@ -914,8 +914,36 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6578987405297985525, guid: deed5597932ef694f8421573428343c4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578987405297985525, guid: deed5597932ef694f8421573428343c4,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561007131811398415, guid: deed5597932ef694f8421573428343c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561007131811398415, guid: deed5597932ef694f8421573428343c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561007131811398415, guid: deed5597932ef694f8421573428343c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.308
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6550016708540640483, guid: deed5597932ef694f8421573428343c4, type: 3}
+    - {fileID: 3133296965265498398, guid: deed5597932ef694f8421573428343c4, type: 3}
+    - {fileID: 7151968226841812842, guid: deed5597932ef694f8421573428343c4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deed5597932ef694f8421573428343c4, type: 3}
