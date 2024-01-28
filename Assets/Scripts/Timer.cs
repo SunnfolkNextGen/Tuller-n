@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timeRemaining += Time.deltaTime;
-        if (timeRemaining >= 300)
+        if (timeRemaining >= 257)
         {
             TimeHasRunOut();
         }
@@ -35,8 +35,16 @@ public class Timer : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void TimeHasRunOut()
     {
-        Debug.Log("Time has run out!");
-        animator.Play("FadeOut");
+        if (ArtifactManager._artifactsCollected > 2)
+        {
+            SceneManager.LoadScene("EntertainedScene");
+        }
+        else
+        {
+            Debug.Log("Time has run out!");
+            animator.Play("FadeOut");
+        }
+        
         
     }   
 
@@ -45,7 +53,6 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeRemaining / 60);
         float seconds = Mathf.FloorToInt(timeRemaining % 60);
         textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        Debug.Log("Time Remaining: " + minutes + ":" + seconds);
     }
     
 
