@@ -8,11 +8,12 @@ public class ArtifactManager : MonoBehaviour
 
     private TextMeshProUGUI text;
     private Animator animator;
-    private int artifactsCollected;
+    public static int _artifactsCollected;
     
     // Start is called before the first frame update
     void Start()
     {
+        _artifactsCollected = 0;
         text = GetComponent<TextMeshProUGUI>();
         animator = GetComponent<Animator>();
     }
@@ -31,6 +32,6 @@ public class ArtifactManager : MonoBehaviour
 
     public void CollectArtifact()
     {
-        artifactsCollected++;
+        _artifactsCollected++;
     }
 }
