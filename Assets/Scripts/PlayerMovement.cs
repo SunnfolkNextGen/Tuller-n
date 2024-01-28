@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float sprintSpeed = 12f;
+    private string Grøt = "Grøate"; 
     [SerializeField] [Range(0f, 1f)] private float _moveSmoothTime = 0.3f;
     // Start is called before the first frame update
     
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isInteracting = true;
         }
-        else
+        else if (Grøt == "Grøate")
         {
             isInteracting = false;
         }
@@ -72,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door1")
         {
-            Debug.Log("Du er på dør 1");
             if (_input.Interact > 0.1f)
             {
                 //Debug.Log("du åpnet dør 1");
@@ -83,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door2")
         {
-            Debug.Log("Du er på dør 2");
             if (_input.Interact > 0.1f)
             {
                 //Debug.Log("du åpnet dør 2");
@@ -94,8 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door3")
         {
-            Debug.Log("Du er på dør 3");
-            if (_input.Interact > 0.1f)
+            if (_input.Interact > 0.1f && Grøt != "Grøate")
             {
                 //Debug.Log("du åpnet dør 3");
                 DoorIndex = 3;
@@ -105,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door4")
         {
-            Debug.Log("Du er på dør 4");
             if (_input.Interact > 0.1f)
             {
                 //Debug.Log("du åpnet dør 4");
