@@ -5,10 +5,9 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    [SerializeField] private float gravity = -13f;
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float sprintSpeed = 12f;
-    private string Grøt = "Grøate"; 
     [SerializeField] [Range(0f, 1f)] private float _moveSmoothTime = 0.3f;
     // Start is called before the first frame update
     
@@ -17,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private InputActionsController _input;
     
     
-    private float _vel  = -2f;
+    private float _vel;
     public Vector2 currentDirection = Vector2.zero;
     private Vector2 _currentDirectionVel = Vector2.zero;
     
@@ -36,8 +35,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         currentDirection = Vector2.SmoothDamp(currentDirection, _input.MoveVector, 
             ref _currentDirectionVel, _moveSmoothTime);
+        if (_characterController.isGrounded)
+        {
+            _vel = -2f;
+        }
+        else
+        {
+            _vel += gravity * Time.deltaTime;
+        }
         
         _vel = Mathf.Clamp(_vel, -26f, 26f);
  
@@ -61,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isInteracting = true;
         }
-        else if (Grøt == "Grøate")
+        else
         {
             isInteracting = false;
         }
@@ -73,9 +81,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door1")
         {
+            Debug.Log("Du er pï¿½ dï¿½r 1");
             if (_input.Interact > 0.1f)
             {
-                //Debug.Log("du åpnet dør 1");
+                //Debug.Log("du ï¿½pnet dï¿½r 1");
                 DoorIndex = 1;
             }
             else infinteCorridor.spawnFix = true;
@@ -83,9 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door2")
         {
+            Debug.Log("Du er pï¿½ dï¿½r 2");
             if (_input.Interact > 0.1f)
             {
-                //Debug.Log("du åpnet dør 2");
+                //Debug.Log("du ï¿½pnet dï¿½r 2");
                 DoorIndex = 2;
             }
             else infinteCorridor.spawnFix = true;
@@ -93,9 +103,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door3")
         {
-            if (_input.Interact > 0.1f && Grøt != "Grøate")
+            Debug.Log("Du er pï¿½ dï¿½r 3");
+            if (_input.Interact > 0.1f)
             {
-                //Debug.Log("du åpnet dør 3");
+                //Debug.Log("du ï¿½pnet dï¿½r 3");
                 DoorIndex = 3;
             }
             else infinteCorridor.spawnFix = true;
@@ -103,9 +114,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Door4")
         {
+            Debug.Log("Du er pï¿½ dï¿½r 4");
             if (_input.Interact > 0.1f)
             {
-                //Debug.Log("du åpnet dør 4");
+                //Debug.Log("du ï¿½pnet dï¿½r 4");
                 DoorIndex = 4;
             }
             else infinteCorridor.spawnFix = true;
