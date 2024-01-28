@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HaakonTestScene.unity
     guid: 8ee78972de15c0b4ab06b99766986fbc
   - enabled: 1
