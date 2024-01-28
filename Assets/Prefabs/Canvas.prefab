@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2620221682736360129}
   - component: {fileID: 1968705728549642760}
   - component: {fileID: 3623155376755043572}
+  - component: {fileID: 6973737482651955612}
   m_Layer: 5
   m_Name: ArmImmage
   m_TagString: Untagged
@@ -97,6 +98,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6973737482651955612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031495490378372539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8798107fbe886cf4a8391c820c96bfc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textTimer: {fileID: 2856840829975773641}
 --- !u!1 &6080875016919967739
 GameObject:
   m_ObjectHideFlags: 0
