@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private float _vel;
     public Vector2 currentDirection = Vector2.zero;
     private Vector2 _currentDirectionVel = Vector2.zero;
+
+    private bool doTeleport;
     
     public int DoorIndex;
     [SerializeField] private InfiniteCorridorController infinteCorridor;
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         infinteCorridor = FindObjectOfType<InfiniteCorridorController>();
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -122,5 +126,15 @@ public class PlayerMovement : MonoBehaviour
             }
             else infinteCorridor.spawnFix = true;
         }
+    }
+
+    public void Teleport()
+    {
+
+        _characterController.enabled = false;
+        transform.position = new Vector3(-4, 20, -3);
+        _characterController.enabled = true;
+        print("Tping");
+        doTeleport = true;
     }
 }
