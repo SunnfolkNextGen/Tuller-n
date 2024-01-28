@@ -8,6 +8,7 @@ public class ArtifactManager : MonoBehaviour
 
     private TextMeshProUGUI text;
     private Animator animator;
+    private int artifactsCollected;
     
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,10 @@ public class ArtifactManager : MonoBehaviour
     {
         text.text = message;
         animator.Play("TextAnimation");
+    }
+
+    public void CollectArtifact()
+    {
+        artifactsCollected++;
     }
 }
