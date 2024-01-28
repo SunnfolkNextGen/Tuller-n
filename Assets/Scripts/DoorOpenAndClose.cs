@@ -7,10 +7,12 @@ public class DoorOpenAndClose : MonoBehaviour
     [SerializeField] private Animator animator  = null;
     [SerializeField] private PlayerMovement player;
     
-    [SerializeField] private bool isOpenTrigger;
-    [SerializeField] private bool isCloseTrigger;
+    [SerializeField]private InputActionsController _input;
     
-    private InputActionsController _input;
+    [SerializeField] private bool isOpen;
+        
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,21 +24,27 @@ public class DoorOpenAndClose : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player is in trigger");
-            if (player.isInteracting)
+            if (_input.Interact>0.1f)
             {
-                if (isOpenTrigger)
+                Debug.Log("Player is interacting"); 
+                if (!isOpen)    
                 {   
                     animator.Play("Door Open", 0, 0f);
+                    isOpen = true;
+                    
                 }
-                else if (isCloseTrigger)
+                else if (isOpen)
                 {
                     animator.Play("Door close", 0, 0f);
+                    isOpen = false;
+                    
                 }
                 
             }
-            
+
+           
         }
     }
-    // Update is called once per frame
+    
     
 }

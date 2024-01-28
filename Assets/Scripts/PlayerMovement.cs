@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
     
     private CharacterController _characterController;
-    private InputActionsController _input;
+    [SerializeField]private InputActionsController _input;
     
     
     private float _vel;
