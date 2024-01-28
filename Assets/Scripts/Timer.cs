@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
    //public GameObject fadeToBlackSquare;
    public Animator animator;
     
+   
    public TMP_Text textTimer;
    
     public float timeRemaining = 0;

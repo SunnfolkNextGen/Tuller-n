@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2826055914611407751}
   - component: {fileID: 4375123020587441597}
   - component: {fileID: 1456578208795270891}
+  - component: {fileID: 7568914373848068134}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -137,7 +138,7 @@ MonoBehaviour:
   gravity: -13
   moveSpeed: 6
   sprintSpeed: 12
-  _moveSmoothTime: 0.3
+  _moveSmoothTime: 0
   currentDirection: {x: 0, y: 0}
   DoorIndex: 0
   infinteCorridor: {fileID: 0}
@@ -182,9 +183,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 4140313268764122532}
   lockCursor: 1
-  mouseSensitivityX: 35
-  mouseSensitivityY: 25
+  mouseSensitivityX: 9
+  mouseSensitivityY: 9
   canLook: 1
+--- !u!114 &7568914373848068134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743041865128299410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf4315f6aa07d041914a4ac2c63e012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textTimer: {fileID: 0}
+  input: {fileID: 6097355140910068684}
+  animator: {fileID: 0}
 --- !u!1 &5631192810648141167
 GameObject:
   m_ObjectHideFlags: 0
