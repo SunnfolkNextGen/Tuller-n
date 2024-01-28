@@ -32,7 +32,7 @@ public class DoorOpenAndClose : MonoBehaviour
                 {
                     animator.Play("Door close", 0, 0f);
                 }
-                bool GrøtIsGrøate = true; 
+                
             }
             
         }
