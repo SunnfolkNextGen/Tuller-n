@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]private Timer timer;
+    
     [SerializeField]private InputActionsController input;
     [SerializeField]private Animator animator;
     private static readonly int IsHoldingUpArm = Animator.StringToHash("IsHoldingUpArm");
@@ -24,13 +24,15 @@ public class UIManager : MonoBehaviour
         if (input.SeeTimer)
         {
             animator.SetBool(IsHoldingUpArm, true);
+            wait();
+           
         }
         else
         {
             animator.SetBool(IsHoldingUpArm, false);
         }
         
-        Debug.Log(timer.timeRemaining);
+        
     }
     
     private IEnumerator wait()

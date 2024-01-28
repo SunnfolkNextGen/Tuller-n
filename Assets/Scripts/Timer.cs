@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
    //public GameObject fadeToBlackSquare;
    public Animator animator;
     
-    public float timeRemaining = 300;
+   public TMP_Text textTimer;
+   
+    public float timeRemaining = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +23,12 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeRemaining -= Time.deltaTime;
-        
-        if (timeRemaining <= 0)
+        timeRemaining += Time.deltaTime;
+        if (timeRemaining >= 300)
         {
             TimeHasRunOut();
         }
+        displayTime();
     }
     
     // ReSharper disable Unity.PerformanceAnalysis
@@ -33,38 +36,17 @@ public class Timer : MonoBehaviour
     {
         Debug.Log("Time has run out!");
         animator.Play("FadeOut");
-        //StartCoroutine(FadeToBlack(false,1));
+        
     }   
 
+    public void displayTime()
+    {
+        float minutes = Mathf.FloorToInt(timeRemaining / 60);
+        float seconds = Mathf.FloorToInt(timeRemaining % 60);
+        textTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        Debug.Log("Time Remaining: " + minutes + ":" + seconds);
+    }
     
 
-    // public IEnumerator FadeToBlack(bool fadeToBlack,int fadeSpeed)
-    // {
-    //     Color objectColor = fadeToBlackSquare.GetComponent<Image>().color;
-    //     float fadeAmount;
-    //
-    //     if (fadeToBlack)
-    //     {
-    //         while (fadeToBlackSquare.GetComponent<Image>().color.a < 1)
-    //         {
-    //             fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-    //
-    //             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-    //             fadeToBlackSquare.GetComponent<Image>().color = objectColor;
-    //             yield return null;
-    //         }
-    //         
-    //     }
-    //     else
-    //     {
-    //         while (fadeToBlackSquare.GetComponent<Image>().color.a > 0)
-    //         {
-    //             fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
-    //
-    //             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-    //             fadeToBlackSquare.GetComponent<Image>().color = objectColor;
-    //             yield return null;
-    //         }
-    //     }
-    // }
+    
 }
