@@ -2662,6 +2662,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoreBackroom
       objectReference: {fileID: 0}
+    - target: {fileID: 5279348148915643404, guid: a3def82b9761eab47863cd93138e344b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5347452011496689090, guid: a3def82b9761eab47863cd93138e344b,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -2683,7 +2688,9 @@ PrefabInstance:
       value: 83.6448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4222837198075265439, guid: a3def82b9761eab47863cd93138e344b, type: 3}
+    - {fileID: 1371113827305558456, guid: a3def82b9761eab47863cd93138e344b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4428732215076313059, guid: a3def82b9761eab47863cd93138e344b,
         type: 3}
@@ -2943,7 +2950,7 @@ PrefabInstance:
     - target: {fileID: 3463997767823774240, guid: 480d8dad0a4c0dd41803db37403a0e52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3740606358631764017, guid: 480d8dad0a4c0dd41803db37403a0e52,
         type: 3}
